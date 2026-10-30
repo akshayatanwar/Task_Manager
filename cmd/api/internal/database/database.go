@@ -7,16 +7,16 @@ import (
 )
 
 type Store struct {
-	mu     sync.RWMutex
-	tasks  map[int]models.Task
-	nextID int
+	Mu     sync.RWMutex
+	Tasks  map[int]models.Task
+	NextID int
 	file   string
 }
 
 func NewStore(file string) (*Store, error) {
 	s := &Store{
-		tasks:  make(map[int]models.Task),
-		nextID: 1,
+		Tasks:  make(map[int]models.Task),
+		NextID: 1,
 		file:   file,
 	}
 
