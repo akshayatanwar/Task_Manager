@@ -81,7 +81,6 @@ func (s *TaskService) Get(id int64) (*model.Task, error) {
 	return s.repo.GetByID(id)
 }
 
-// List returns all tasks, optionally filtered by status.
 func (s *TaskService) List(status string) ([]model.Task, error) {
 	if status != "" && !validStatus(status) {
 		return nil, ErrInvalidStatus
